@@ -1,1 +1,1 @@
-# QuickNotes
+# QuickNotes Mobile App
