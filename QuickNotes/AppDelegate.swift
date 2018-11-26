@@ -17,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//        UINavigationBar.appearance().tintColor = UIColor(red: 0.0/255.0, green: 100.0/255.0, blue: 50.0/255.0, alpha: 1.0)
+//        self.collectionView.backgroundColor = [UIColor .gray];
+        
+
+//        let color  = UIColor(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+//        let font  = UIFont(name: "Roboto-Medium", size: 18)
+//
+//        let attribute: [String: AnyObject] = [
+//
+//        ]
         // Override point for customization after application launch.
         return true
     }
