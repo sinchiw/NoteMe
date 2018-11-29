@@ -16,6 +16,9 @@
 		CE843B74218CE4B4008B28B9 /* QuickNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE843B72218CE4B4008B28B9 /* QuickNotes.xcdatamodeld */; };
 		CE843B76218CE4BD008B28B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE843B75218CE4BD008B28B9 /* Assets.xcassets */; };
 		CE843B79218CE4BD008B28B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE843B77218CE4BD008B28B9 /* LaunchScreen.storyboard */; };
+		CEAB02A821AC7E23003B2C79 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB02A721AC7E23003B2C79 /* PersistenceService.swift */; };
+		CEAB02AB21AC979E003B2C79 /* Course+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB02A921AC979E003B2C79 /* Course+CoreDataClass.swift */; };
+		CEAB02AC21AC979E003B2C79 /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB02AA21AC979E003B2C79 /* Course+CoreDataProperties.swift */; };
 		CEC7C2F12195E9C6009B1BC5 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7C2F02195E9C6009B1BC5 /* ClassDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +34,9 @@
 		CE843B75218CE4BD008B28B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE843B78218CE4BD008B28B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE843B7A218CE4BD008B28B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEAB02A721AC7E23003B2C79 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		CEAB02A921AC979E003B2C79 /* Course+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CEAB02AA21AC979E003B2C79 /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CEC7C2F02195E9C6009B1BC5 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +61,8 @@
 		CE843B5F218CE4B4008B28B9 = {
 			isa = PBXGroup;
 			children = (
+				CEAB02A921AC979E003B2C79 /* Course+CoreDataClass.swift */,
+				CEAB02AA21AC979E003B2C79 /* Course+CoreDataProperties.swift */,
 				CEC7C2F02195E9C6009B1BC5 /* ClassDetailViewController.swift */,
 				CE843B6A218CE4B4008B28B9 /* QuickNotes */,
 				CE843B69218CE4B4008B28B9 /* Products */,
@@ -73,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				CE843B6B218CE4B4008B28B9 /* AppDelegate.swift */,
+				CEAB02A721AC7E23003B2C79 /* PersistenceService.swift */,
 				CE843B6D218CE4B4008B28B9 /* ViewController.swift */,
 				CE843B6F218CE4B4008B28B9 /* Main.storyboard */,
 				CE54132321923D9100302BC2 /* ManageClass.swift */,
@@ -158,10 +167,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAB02AB21AC979E003B2C79 /* Course+CoreDataClass.swift in Sources */,
 				CE541322219239AC00302BC2 /* CollectionViewCell.swift in Sources */,
+				CEAB02A821AC7E23003B2C79 /* PersistenceService.swift in Sources */,
 				CE843B6E218CE4B4008B28B9 /* ViewController.swift in Sources */,
 				CE843B74218CE4B4008B28B9 /* QuickNotes.xcdatamodeld in Sources */,
 				CE54132421923D9100302BC2 /* ManageClass.swift in Sources */,
+				CEAB02AC21AC979E003B2C79 /* Course+CoreDataProperties.swift in Sources */,
 				CEC7C2F12195E9C6009B1BC5 /* ClassDetailViewController.swift in Sources */,
 				CE843B6C218CE4B4008B28B9 /* AppDelegate.swift in Sources */,
 				CE5413202192190500302BC2 /* RecordingController.swift in Sources */,

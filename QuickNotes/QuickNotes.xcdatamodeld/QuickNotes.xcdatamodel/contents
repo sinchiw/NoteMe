@@ -5,7 +5,11 @@
         <attribute name="classname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="classtime" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Course" representedClassName="Course" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Classes" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="Course" positionX="-54" positionY="18" width="128" height="60"/>
     </elements>
 </model>

@@ -19,25 +19,29 @@ struct classcell {
 
 class ViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addButton: UIBarButtonItem!
     
-    var course = [Classes]()
+    var courses = [Course]()
 //    var classArray = [String]()
-    var managedObjectContext: NSManagedObjectContext? {
-        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    }
-    
+//    var managedObjectContext: NSManagedObjectContext? {
+//        return (UIApplication.shared.delegate as! PersistenceService).persistentContainer.viewContext
+//    }
+//
     /////////////////////////////////////
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        //implemnet something here in the retrieve note section
+//        retreiveData()
         //rename a function that add the new class
         return
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        classArray = ["History"]
+        
+        retrievData()
         navBarSetting()
         reszingButton()
         // Do any additional setup after loading the view, typically from a nib.
@@ -47,7 +51,7 @@ class ViewController : UIViewController, UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         
-        return course.count
+        return courses.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,11 +60,11 @@ class ViewController : UIViewController, UICollectionViewDelegate, UICollectionV
         //set the label
         //change the cell background color by cell.bakcground.color = UIcolor to whatever you want
        //this code below here is a pratice one to see your view or how the layout looksout
-        cell.className.text = "History"
-        cell.schedule.text = "MonTues 8:30pm - 9:30pm"
+        cell.className.text = courses[indexPath.row].name
+//        cell.schedule.text = "MonTues 8:30pm - 9:30pm"
         //set the color of the class cell background
         
-        let courseArray : Classes = course[indexPath.row]
+//        let courseArray : Course = courses[indexPath.row]
     // putting in the name of the function which exist in the bottom
         //courseArray: courseArray is the parameter
 //        cell.configureCell(courseArray:courseArray)
@@ -91,28 +95,46 @@ class ViewController : UIViewController, UICollectionViewDelegate, UICollectionV
     
   @objc func addButtonPressed(sender: UIBarButtonItem)
   {
-        let manageViewController = self.storyboard?.instantiateViewController(withIdentifier: "manageViewController") as! manageViewController
-        self.navigationController?.pushViewController(manageViewController, animated: true)
+//        let manageViewController = self.storyboard?.instantiateViewController(withIdentifier: "manageViewController") as! manageViewController
+//        self.navigationController?.pushViewController(manageViewController, animated: true)
+    
+    let alert = UIAlertController(title: "Add Course", message: nil, preferredStyle: .alert)
+    alert.addTextField{ (UITextField) in UITextField.placeholder = "Course Name"
         
     }
+//    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClassCollectionViewCell", for: indexPath) as! ClassCellView
+    let action = UIAlertAction(title: "Save", style: .default) { (_) in
+        let course = alert.textFields!.first!.text!
+        print (course)
+        let classNames = Course(context: PersistenceService.context)
+        classNames.name = course
+        //to save the data, back it wont read it
+        PersistenceService.saveContext()
+        //
+        self.courses.append(classNames)
+        self.collectionView.reloadData()
+        
+        
+    }
+    alert.addAction(action)
+    present(alert, animated: true, completion: nil)
+    }
     
-    
-    
-    func retreiveData() {
-        managedObjectContext?.perform {
-            //write something here
-//            //fecthing the notes from core data
-//            self.fetchCourseDataFromCoreData{ (courseArray) in
-////                if let courseArray =courseArray{
-////                    self.cours
-////                }
-//                \
-//            }
-//            
+    func retrievData(){
+        let fetchRequest: NSFetchRequest<Course> = Course.fetchRequest()
+        do{
+            //this is how we get the data that we want back to the uicollectionview label
+            do {
+                let classes = try PersistenceService.context.fetch(fetchRequest)
+                self.courses = classes
+                self.collectionView.reloadData()
+            } catch{}
         }
         
         
     }
+    
+
     
     }
 
@@ -125,7 +147,7 @@ class ClassCellView : CollectionViewCell
     
     @IBOutlet weak var className: UILabel!
     
-    @IBOutlet weak var schedule: UILabel!
+//    @IBOutlet weak var schedule: UILabel!
     
 }
 

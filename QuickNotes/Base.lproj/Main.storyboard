@@ -69,14 +69,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="259" height="226"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ClassName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHl-Hf-OBE">
-                                                    <rect key="frame" x="40" y="40" width="179" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaJ-Yx-Xr6">
-                                                    <rect key="frame" x="57" y="76" width="147" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ClassName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHl-Hf-OBE">
+                                                    <rect key="frame" x="40" y="103" width="179" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -85,19 +79,19 @@
                                         </view>
                                         <color key="backgroundColor" red="0.57099104229999997" green="0.79615865149999998" blue="0.27484578450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="VaJ-Yx-Xr6" firstAttribute="top" secondItem="OHl-Hf-OBE" secondAttribute="bottom" constant="15" id="5Ut-tv-hz1"/>
                                             <constraint firstItem="OHl-Hf-OBE" firstAttribute="centerX" secondItem="xLE-HS-nAU" secondAttribute="centerX" id="8SA-ms-KgB"/>
-                                            <constraint firstItem="VaJ-Yx-Xr6" firstAttribute="leading" secondItem="xLE-HS-nAU" secondAttribute="leadingMargin" constant="49" id="Rec-Hn-2bS"/>
-                                            <constraint firstItem="OHl-Hf-OBE" firstAttribute="top" secondItem="xLE-HS-nAU" secondAttribute="topMargin" constant="12" id="SZB-yf-pVy"/>
+                                            <constraint firstItem="OHl-Hf-OBE" firstAttribute="top" secondItem="xLE-HS-nAU" secondAttribute="topMargin" constant="95" id="SZB-yf-pVy"/>
                                             <constraint firstItem="OHl-Hf-OBE" firstAttribute="leading" secondItem="xLE-HS-nAU" secondAttribute="leadingMargin" constant="32" id="noa-9A-w82"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="VaJ-Yx-Xr6" secondAttribute="trailing" constant="47" id="sQq-8T-xmC"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="className" destination="OHl-Hf-OBE" id="Q2W-de-VxV"/>
-                                            <outlet property="schedule" destination="VaJ-Yx-Xr6" id="4zW-pG-2lh"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="3HZ-iT-APb" id="cY5-lJ-Phu"/>
+                                    <outlet property="delegate" destination="3HZ-iT-APb" id="Q0S-lC-OZB"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -111,6 +105,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Class" id="7Oz-UQ-VsF"/>
                     <connections>
+                        <outlet property="collectionView" destination="tvY-6m-hXP" id="EU8-Ev-bGl"/>
                         <segue destination="QFJ-Hk-KSq" kind="presentation" id="5Vv-m9-Wrq"/>
                         <segue destination="PMx-rm-f1N" kind="presentation" identifier="addCourses" id="csL-Q3-MP3"/>
                     </connections>
